@@ -4,3 +4,6 @@
         <h1>My projects  page</h1>
         <p>Here i'll publish  my projects</p>
 @endsection
+@section('index')
+
+@endsection

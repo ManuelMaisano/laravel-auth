@@ -26,4 +26,4 @@
         <a href="{{route('admin.projects.index')}}" class="btn btn-success">Go to your projects</a>
     </div>
 </div>
-@endsection
+
