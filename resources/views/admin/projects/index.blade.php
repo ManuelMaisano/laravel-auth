@@ -17,7 +17,12 @@
                 <th scope="row">{{$project->id}}</th>
                 <td>{{$project->title}}</td>
                 <td>{{$project->content}}</td>\
-                <td>{{$project->slug}}</td>
+                <td>{{$project->slug}}</td>\
+                <td>
+                    <a href="{{route('admin.projects.show', $project->slug)}}" title="Show" class="text-black px-2"><i class="fa-solid fa-eye"></i>show</a>
+                    <a href="{{route('admin.projects.edit', $project->slug)}}" title="Edit" class="text-black px-2"><i class="fa-solid fa-pen"></i>edit</a>
+                    
+                </td>
             </tr>
             @endforeach
         </tbody>
