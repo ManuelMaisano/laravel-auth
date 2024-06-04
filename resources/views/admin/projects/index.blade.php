@@ -1,13 +1,14 @@
 @extends('layouts.app')
 @section('content')
 <section class="container">
-    <h1>Your projects</h1>
+    <h1 class="text-center">Your projects</h1>
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
+                <th scope="col">id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Content</th>
+                <th scope="col">Slug</th>
             </tr>
         </thead>
         <tbody>
@@ -15,7 +16,8 @@
             <tr>
                 <th scope="row">{{$project->id}}</th>
                 <td>{{$project->title}}</td>
-                <td>{{$project->content}}</td>
+                <td>{{$project->content}}</td>\
+                <td>{{$project->slug}}</td>
             </tr>
             @endforeach
         </tbody>
