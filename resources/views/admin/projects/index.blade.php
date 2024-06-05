@@ -22,7 +22,13 @@
                 <td>
                     <a href="{{route('admin.projects.show', $project->slug)}}" title="Show" class="text-black px-2"><i class="fa-solid fa-eye"></i>show</a>
                     <a href="{{route('admin.projects.edit', $project->slug)}}" title="Edit" class="text-black px-2"><i class="fa-solid fa-pen"></i>edit</a>
-                    
+                    <form action="{{route('admin.projects.destroy', $project->slug)}}" method="POST" class="d-inline-block">
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="delete-button border-0 bg-transparent"  data-item-title="{{ $project->title }}">
+                        <i class="fa-solid fa-trash"></i>
+                      </button>
+                    </form>
                 </td>
             </tr>
             @endforeach
