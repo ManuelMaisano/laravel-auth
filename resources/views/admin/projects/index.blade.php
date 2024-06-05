@@ -2,6 +2,7 @@
 @section('content')
 <section class="container">
     <h1 class="text-center">Your projects</h1>
+    <a href="{{route('admin.projects.create')}}" class="btn btn-danger">Create new post</a>
     <table class="table">
         <thead>
             <tr>

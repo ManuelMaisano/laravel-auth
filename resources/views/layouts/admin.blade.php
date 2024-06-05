@@ -21,9 +21,7 @@
 
 <body>
     <div id="admin">
-        @include('partials.sidebar')
         <div id="wrapper">
-           @include('partials.header')
             <main class="container-fluid">
                 @yield('content')
             </main>

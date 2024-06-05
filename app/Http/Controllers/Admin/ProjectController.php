@@ -23,7 +23,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+      
+        return view('admin.projects.create');
     }
 
     /**
@@ -31,25 +32,32 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request -> validate([
+            'title' => 'required|max:255',
+            'content' => 'required',
+            'cover_image' => 'image|nullable|',
+        ]);
+        $form_data = $request->all();
+        $form_data['slug'] = Project::generateSlug($form_data['title']);
+        $newProject = Project::create($form_data);
+        return redirect()->route('admin.projects.show', $newProject->slug)->with('message', 'New project created successfully');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Project $project)
+    public function show(Project $projects)
     {
-
+        return view('admin.projects.show', compact('projects'));
     
-        return view('admin.projects.show', compact('project'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Project $project)
+    public function edit(Project $projects)
     {
-        return view('admin.projects.edit', compact('project'));
+        return view('admin.projects.edit', compact('projects'));
     }
 
     /**
